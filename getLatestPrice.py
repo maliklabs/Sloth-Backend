@@ -13,7 +13,7 @@ def getLatestPrice(ticker: str) -> float:
         The latest price as a float
     """
     if type(ticker) != str:
-        exit("ERROR IN getLatestPrice => Non-String entered for Ticker variable")
+        exit("ERROR IN getLatestPrice => Non-String entered for ticker variable")
     
     load_dotenv()
 

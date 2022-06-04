@@ -3,6 +3,7 @@ from getLatestBar import getLatestBar
 
 price = getLatestPrice("amzn")
 
-getLatestBar()
+bars = getLatestBar("amzn")
 
-print(price)
+for bar in bars:
+    print(bar)
