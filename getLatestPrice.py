@@ -5,9 +5,10 @@ import requests
 def getLatestPrice(ticker: str) -> float:
     """
     Gets the latest price for the ticker
-
+    \n
     Arguments: 
         ticker: String for stock symbol
+    \n
     Returns:
         The latest price as a float
     """
@@ -28,9 +29,9 @@ def getLatestPrice(ticker: str) -> float:
 
     response = requests.request("GET", url, headers=headers)
 
-    test = response.json()
+    data = response.json()
 
-    if "code" in test and "message" in test:
-        exit(f'ERROR IN getLatestPrice => Code {test["code"]}: {test["message"]}')
+    if "code" in data and "message" in data:
+        exit(f'ERROR IN getLatestPrice => Code {data["code"]}: {data["message"]}')
 
-    return test["bar"]["c"]
+    return data["bar"]["c"]
